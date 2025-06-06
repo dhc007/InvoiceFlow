@@ -7,7 +7,6 @@ import {
 } from "../../../../components/ui/accordion";
 
 export const FAQSection = (): JSX.Element => {
-  // FAQ data for mapping
   const faqItems = [
     {
       question:
@@ -32,9 +31,9 @@ export const FAQSection = (): JSX.Element => {
           <AccordionItem
             key={index}
             value={`item-${index}`}
-            className="mb-3 bg-[#fcf9f7] rounded-xl border border-solid border-[#e8e2ce] px-[15px] py-[7px]"
+            className="mb-3 bg-[#fcf9f7] rounded-xl border border-solid border-[#e8e2ce] px-3 md:px-[15px] py-2 md:py-[7px]"
           >
-            <AccordionTrigger className="py-2 hover:no-underline">
+            <AccordionTrigger className="py-2 hover:no-underline min-h-[48px]">
               <span className="font-medium text-[#1c160c] text-sm leading-[21px] text-left">
                 {item.question}
               </span>
