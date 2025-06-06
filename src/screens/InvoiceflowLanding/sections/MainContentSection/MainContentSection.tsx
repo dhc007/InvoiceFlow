@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
-import { Link } from "react-router-dom";
 
 export const MainContentSection = (): JSX.Element => {
   return (
@@ -18,7 +17,6 @@ export const MainContentSection = (): JSX.Element => {
             <h1 className="font-black text-white text-3xl md:text-5xl tracking-[-1px] md:tracking-[-2.00px] leading-[1.2] md:leading-[60px] font-sans">
               Automate Your Invoice Workflow
             </h1>
-            <p className="text-white text-lg mt-2">Starting at just $19/month</p>
           </div>
 
           {/* Description */}
@@ -30,21 +28,11 @@ export const MainContentSection = (): JSX.Element => {
             </p>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="absolute top-[260px] md:top-[391px] left-4 md:left-10 right-4 md:right-auto px-2">
-            <div className="flex flex-col md:flex-row gap-3">
-              <Button className="w-full md:w-auto bg-[#f9c638] text-[#1c160c] hover:bg-[#f9c638]/90 font-bold text-sm h-12 px-4 rounded-xl">
-                Get Started
-              </Button>
-              <Link to="/pricing">
-                <Button
-                  variant="outline"
-                  className="w-full md:w-auto bg-white/80 text-[#1c160c] hover:bg-white font-bold text-sm h-12 px-4 rounded-xl"
-                >
-                  Compare Pricing Plans
-                </Button>
-              </Link>
-            </div>
+            <Button className="w-full md:w-auto bg-[#f9c638] text-[#1c160c] hover:bg-[#f9c638]/90 font-bold text-sm h-12 px-4 rounded-xl">
+              Get Started
+            </Button>
           </div>
         </div>
       </div>
