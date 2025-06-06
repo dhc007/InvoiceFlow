@@ -12,11 +12,21 @@ import { Link } from "react-router-dom";
 export const HeroSection = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
-    { name: "Product", path: "/" },
-    { name: "Solutions", path: "/" },
-    { name: "Resources", path: "/" },
+    { name: "Features", path: "/#features" },
+    { name: "Solutions", path: "/#solutions" },
+    { name: "Resources", path: "/#resources" },
     { name: "Pricing", path: "/pricing" },
   ];
+
+  const scrollToSection = (path: string) => {
+    if (path.startsWith('/#')) {
+      const element = document.getElementById(path.substring(2));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header className="flex items-center justify-between px-4 md:px-10 py-3 border-b border-[#e5e8ea] w-full relative">
@@ -51,11 +61,20 @@ export const HeroSection = (): JSX.Element => {
           <NavigationMenuList className="flex gap-9">
             {navItems.map((item) => (
               <NavigationMenuItem key={item.name}>
-                <Link to={item.path}>
-                  <NavigationMenuLink className="font-medium text-sm text-[#1c160c]">
+                {item.path.startsWith('/#') ? (
+                  <button
+                    onClick={() => scrollToSection(item.path)}
+                    className="font-medium text-sm text-[#1c160c] hover:text-[#1c160c]/80"
+                  >
                     {item.name}
-                  </NavigationMenuLink>
-                </Link>
+                  </button>
+                ) : (
+                  <Link to={item.path}>
+                    <NavigationMenuLink className="font-medium text-sm text-[#1c160c]">
+                      {item.name}
+                    </NavigationMenuLink>
+                  </Link>
+                )}
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -79,14 +98,19 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg z-50 md:hidden">
           <nav className="flex flex-col py-4">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className="px-6 py-3 text-[#1c160c] hover:bg-[#fcf9f7]"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  if (item.path.startsWith('/#')) {
+                    scrollToSection(item.path);
+                  } else {
+                    window.location.href = item.path;
+                  }
+                }}
+                className="px-6 py-3 text-left text-[#1c160c] hover:bg-[#fcf9f7]"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
             <div className="flex flex-col gap-2 px-4 pt-4">
               <Button className="h-12 w-full font-bold text-sm text-[#1c160c] bg-[#f9c638] hover:bg-[#f9c638]/90 rounded-xl">

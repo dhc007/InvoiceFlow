@@ -18,7 +18,7 @@ export const MainContentSection = (): JSX.Element => {
             <h1 className="font-black text-white text-3xl md:text-5xl tracking-[-1px] md:tracking-[-2.00px] leading-[1.2] md:leading-[60px] font-sans">
               Automate Your Invoice Workflow
             </h1>
-            <p className="text-white text-lg mt-2">Starting at $19/month</p>
+            <p className="text-white text-lg mt-2">Starting at just $19/month</p>
           </div>
 
           {/* Description */}
@@ -41,7 +41,7 @@ export const MainContentSection = (): JSX.Element => {
                   variant="outline"
                   className="w-full md:w-auto bg-white/80 text-[#1c160c] hover:bg-white font-bold text-sm h-12 px-4 rounded-xl"
                 >
-                  See Pricing
+                  Compare Pricing Plans
                 </Button>
               </Link>
             </div>

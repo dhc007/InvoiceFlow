@@ -6,7 +6,6 @@ import { HeaderSection } from "./sections/HeaderSection";
 import { HeroSection } from "./sections/HeroSection";
 import { KeyFeaturesSection } from "./sections/KeyFeaturesSection";
 import { MainContentSection } from "./sections/MainContentSection/MainContentSection";
-import { PricingSection } from "./sections/PricingSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 
 export const InvoiceflowLanding = (): JSX.Element => {
@@ -17,9 +16,8 @@ export const InvoiceflowLanding = (): JSX.Element => {
           <HeroSection />
 
           <div className="flex justify-center px-4 md:px-40 py-5 w-full">
-            <div className="flex flex-col max-w-full md:max-w-[960px] w-full">
+            <div className="flex flex-col max-w-full md:max-w-[960px] w-full" id="features">
               <MainContentSection />
-              <PricingSection />
               <CallToActionSection />
               <HeaderSection />
               <TestimonialsSection />
